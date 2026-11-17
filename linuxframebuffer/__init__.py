@@ -264,6 +264,7 @@ class LinuxFramebuffer:
         return self._mmap
 
     def _area_written(self, x1: int, y1: int, x2: int, y2: int) -> None:
+        # pylint: disable=invalid-name
         if self._shadow is not None:
             self._areas.append((x1, y1, x2, y2))
 
@@ -289,6 +290,7 @@ class LinuxFramebuffer:
 
     def _convert_area(self, x1: int, y1: int, x2: int, y2: int) -> None:
         """Convert an area of the RGB565 copy into the device"""
+        # pylint: disable=invalid-name
         if x1 == 0 and x2 == self._width:
             self._convert_rows(y1, y2)
             return
